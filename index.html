@@ -9,3 +9,234 @@
      <p>Esta es mi primera página creada con GitHub Pages.</p> 
 </body> 
 </html> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Future – Web no oficial</title>
+  <meta name="description" content="Página de fans dedicada al artista Future: biografía, discografía, fotos y videos." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0f; --card:#14141b; --txt:#e9e9ee; --muted:#a6a6b0; --acc:#7c5cff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth;background:var(--bg);color:var(--txt);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,11,15,.7);backdrop-filter:blur(8px);border-bottom:1px solid #222}
+    .wrap{max-width:1200px;margin-inline:auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700;letter-spacing:.5px}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--acc)}
+    .links{display:flex;gap:1rem;font-weight:500}
+    .btn{display:inline-block;padding:.8rem 1.1rem;border:1px solid #2c2c36;border-radius:999px;background:linear-gradient(180deg,#1d1d27,#14141b);transition:.2s}
+    .btn:hover{transform:translateY(-1px);border-color:#3a3a48}
+    /* Hero */
+    .hero{position:relative;isolation:isolate}
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background: radial-gradient(60% 60% at 70% 30%, #2b2549 0%, transparent 60%),
+                  radial-gradient(50% 50% at 20% 80%, #1b2238 0%, transparent 60%);
+      opacity:.7;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;padding:64px 0}
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr;}}
+    .title{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:0 0 .6rem}
+    .subtitle{color:var(--muted);font-weight:300;margin:0 0 1.2rem}
+    .hero-img{
+      border-radius:24px;overflow:hidden;border:1px solid #282836;
+      box-shadow:0 10px 40px rgba(0,0,0,.45)
+    }
+    .chips{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 0}
+    .chip{font-size:.85rem;color:#c9c9d3;border:1px solid #2c2c36;padding:.4rem .7rem;border-radius:999px}
+    /* Sections */
+    section{padding:56px 0;border-top:1px solid #1b1b24}
+    h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin:0 0 1rem}
+    .grid{display:grid;gap:20px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid #232334;border-radius:18px;overflow:hidden}
+    .card .p{padding:16px}
+    .muted{color:var(--muted)}
+    /* Timeline */
+    .timeline{position:relative;margin:10px 0 0;padding-left:22px}
+    .timeline::before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:#2a2a38}
+    .tl-item{position:relative;margin:18px 0;padding-left:12px}
+    .tl-item::before{content:"";position:absolute;left:-16px;top:.4rem;width:12px;height:12px;background:var(--acc);border-radius:50%}
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    @media (max-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
+    .gallery img{aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid #262636}
+    /* Footer */
+    footer{padding:32px 0;color:#a9a9b2;text-align:center}
+    .credit{font-size:.85rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Inicio">
+        <span class="dot"></span> FUTURE
+      </a>
+      <nav class="links" aria-label="Secciones">
+        <a href="#bio">Bio</a>
+        <a href="#discografia">Discografía</a>
+        <a href="#galeria">Galería</a>
+        <a href="#timeline">Línea de tiempo</a>
+        <a class="btn" href="#videos">Videos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-title" class="title">Future (Nayvadius DeMun Wilburn)</h1>
+          <p class="subtitle">Trapper visionario, referente del sonido de Atlanta y pionero del hip-hop melódico y del autotune sombrío.</p>
+          <div class="chips" role="list" aria-label="Etiquetas">
+            <span class="chip" role="listitem">Trap</span>
+            <span class="chip" role="listitem">Atlanta</span>
+            <span class="chip" role="listitem">Platinum Artist</span>
+            <span class="chip" role="listitem">Grammy Winner</span>
+          </div>
+        </div>
+        <figure class="hero-img">
+          <!-- Reemplaza la imagen de ejemplo por una foto de Future -->
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1600&auto=format&fit=crop" alt="Future en concierto (imagen de ejemplo, sustituir por foto del artista)" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- BIO -->
+    <section id="bio" aria-labelledby="bio-title">
+      <h2 id="bio-title">Biografía</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <img src="assets/future-press-01.jpg" alt="Retrato de Future con luces de estudio" />
+        </div>
+        <div class="card p">
+          <p>
+            Future, nombre artístico de Nayvadius DeMun Wilburn, es uno de los artistas más influyentes del rap contemporáneo. 
+            Emergió desde la escena de Atlanta y redefinió el trap con flows melódicos, atmósferas oscuras y uso distintivo del autotune.
+          </p>
+          <p class="muted">
+            Esta es una web de fans no oficial con fines informativos. Actualiza los datos e imágenes con tus propias fuentes.
+          </p>
+          <a class="btn" href="#discografia">Ver discografía</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCOGRAFÍA (ejemplo editable) -->
+    <section id="discografia" aria-labelledby="disco-title">
+      <h2 id="disco-title">Discografía destacada</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <img src="assets/album-future-hndrxx.jpg" alt="Portada de un álbum de Future (ejemplo)" />
+          <div class="p">
+            <h3 style="margin:.2rem 0 0">Álbum • HNDRXX</h3>
+            <p class="muted">Año: 2017 · Sonido más melódico y R&B.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/album-ds2.jpg" alt="Portada de DS2 (Dirty Sprite 2) de Future (ejemplo)" />
+          <div class="p">
+            <h3 style="margin:.2rem 0 0">Álbum • DS2</h3>
+            <p class="muted">Año: 2015 · Trap icónico, beats pesados.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/album-i-never-liked-you.jpg" alt="Portada de I NEVER LIKED YOU de Future (ejemplo)" />
+          <div class="p">
+            <h3 style="margin:.2rem 0 0">Álbum • I NEVER LIKED YOU</h3>
+            <p class="muted">Año: 2022 · Hits globales y colaboraciones.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALERÍA (pon aquí tus fotos de Future) -->
+    <section id="galeria" aria-labelledby="gal-title">
+      <h2 id="gal-title">Galería</h2>
+      <div class="gallery" aria-label="Galería de imágenes de Future">
+        <!-- Sustituye estas URLs por imágenes reales de Future con permiso -->
+        <img src="assets/future-live-01.jpg" alt="Future actuando en directo" />
+        <img src="assets/future-live-02.jpg" alt="Future en escenario con luces moradas" />
+        <img src="assets/future-studio-01.jpg" alt="Future en estudio de grabación" />
+        <img src="assets/future-press-02.jpg" alt="Sesión de fotos de Future" />
+        <img src="assets/future-closeup.jpg" alt="Primer plano de Future" />
+        <img src="assets/future-fans.jpg" alt="Future con público" />
+      </div>
+    </section>
+
+    <!-- LÍNEA DE TIEMPO (ejemplo editable) -->
+    <section id="timeline" aria-labelledby="tl-title">
+      <h2 id="tl-title">Línea de tiempo</h2>
+      <div class="card p">
+        <div class="timeline" aria-label="Hitos de la carrera">
+          <div class="tl-item">
+            <strong>2012</strong> – Salto a la fama mainstream con mixtapes y el álbum debut.
+          </div>
+          <div class="tl-item">
+            <strong>2015</strong> – <em>DS2</em> consolida su estética trap y liderazgo en charts.
+          </div>
+          <div class="tl-item">
+            <strong>2017</strong> – Doble lanzamiento de <em>FUTURE</em> y <em>HNDRXX</em>.
+          </div>
+          <div class="tl-item">
+            <strong>2022</strong> – <em>I NEVER LIKED YOU</em> multiplica los éxitos globales.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" aria-labelledby="vid-title">
+      <h2 id="vid-title">Videos</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="p">
+            <p class="muted">Ejemplo de embed desde YouTube (reemplaza la URL por un video oficial de Future).</p>
+          </div>
+          <div style="aspect-ratio:16/9">
+            <iframe
+              title="Future - Official Video (ejemplo)"
+              width="100%" height="100%"
+              src="https://www.youtube.com/embed/fJ9rUzIMcZQ"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="card p">
+          <h3 style="margin-top:0">Síguelo</h3>
+          <p class="muted">Añade aquí enlaces a sus redes oficiales.</p>
+          <div class="chips" role="list" aria-label="Redes sociales">
+            <a class="chip" role="listitem" href="#" aria-label="Instagram">Instagram</a>
+            <a class="chip" role="listitem" href="#" aria-label="X/Twitter">X/Twitter</a>
+            <a class="chip" role="listitem" href="#" aria-label="YouTube">YouTube</a>
+            <a class="chip" role="listitem" href="#" aria-label="Spotify">Spotify</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="credit">Web de fans sin afiliación oficial. © <span id="y"></span> • Diseñada por ti ✨</p>
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
